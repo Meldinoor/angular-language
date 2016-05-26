@@ -205,6 +205,7 @@ var LanguageModule;
             bindToController: true,
             controllerAs: 'ctrl',
             controller: LanguageSelecterController,
+			scope: [],
             compile: function (element, attr, transclude) {
                 var preferredLanguages = [];
                 var includeLanguages = [];

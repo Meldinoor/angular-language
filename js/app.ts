@@ -214,6 +214,7 @@ module LanguageModule {
             bindToController: true,
             controllerAs: 'ctrl',
             controller: LanguageSelecterController,
+			scope: [],
             compile: function (element: ng.IAugmentedJQuery, attr: ng.IAttributes, transclude: ng.ITranscludeFunction) {
                 var preferredLanguages: string[] = [];
                 var includeLanguages: string[] = [];
