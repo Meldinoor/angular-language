@@ -285,7 +285,7 @@ module LanguageModule {
                         }                        
 
                         ngModel.$formatters.push(m => Languages[m] + ' (' + m + ')');
-                        ngModel.$parsers.push(v => v.substr(v.lastIndexOf('(') + 1, 3));
+                        ngModel.$parsers.push(v => v.substr(v.lastIndexOf('(') + 1, 2));
 
                         if (!ngModel.$modelValue && defaultLanguage) {
                             ngModel.$setViewValue(Languages[defaultLanguage] + ' (' + defaultLanguage + ')');

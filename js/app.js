@@ -263,7 +263,7 @@ var LanguageModule;
                             defaultLanguage = attr['defaultLanguage'].toString();
                         }
                         ngModel.$formatters.push(function (m) { return Languages[m] + ' (' + m + ')'; });
-                        ngModel.$parsers.push(function (v) { return v.substr(v.lastIndexOf('(') + 1, 3); });
+                        ngModel.$parsers.push(function (v) { return v.substr(v.lastIndexOf('(') + 1, 2); });
                         if (!ngModel.$modelValue && defaultLanguage) {
                             ngModel.$setViewValue(Languages[defaultLanguage] + ' (' + defaultLanguage + ')');
                             ngModel.$setPristine();
