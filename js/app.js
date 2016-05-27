@@ -205,7 +205,7 @@ var LanguageModule;
             bindToController: true,
             controllerAs: 'ctrl',
             controller: LanguageSelecterController,
-			scope: [],
+			scope: {disabled: '=ngDisabled'},
             compile: function (element, attr, transclude) {
                 var preferredLanguages = [];
                 var includeLanguages = [];
@@ -234,7 +234,7 @@ var LanguageModule;
                         dropdownClass = 'dropup';
                 }
                 var style = attr['style'] ? attr['style'] : '';
-                var options = '<div style="' + style + '" class="' + dropdownClass + '"><button style="' + style + '; text-align: left; padding-left: 20px;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{ctrl.ngModel.$viewValue}}<span class="caret" style="position: absolute; right: 10px; top: 48%;"></span></button>'
+                var options = '<div style="' + style + '" class="' + dropdownClass + '"><button style="' + style + '; text-align: left; padding-left: 20px;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" ng-disabled="ctrl.disabled">{{ctrl.ngModel.$viewValue}}<span class="caret" style="position: absolute; right: 10px; top: 48%;"></span></button>'
                     + '<ul style="' + style + '" class="dropdown-menu currency-selecter-scrollable-menu">';
                 if (preferredLanguages.length) {
                     for (var i = 0; i < preferredLanguages.length; ++i) {

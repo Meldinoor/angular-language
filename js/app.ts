@@ -214,7 +214,7 @@ module LanguageModule {
             bindToController: true,
             controllerAs: 'ctrl',
             controller: LanguageSelecterController,
-			scope: [],
+			scope: {disabled: '=ngDisabled'},
             compile: function (element: ng.IAugmentedJQuery, attr: ng.IAttributes, transclude: ng.ITranscludeFunction) {
                 var preferredLanguages: string[] = [];
                 var includeLanguages: string[] = [];
@@ -249,7 +249,7 @@ module LanguageModule {
 				
 				var style: string = attr['style'] ? attr['style'] : '';
                 var options: string =
-                    '<div style="' + style + '" class="' + dropdownClass + '"><button style="' + style + '; text-align: left; padding-left: 20px;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{ctrl.ngModel.$viewValue}}<span class="caret" style="position: absolute; right: 10px; top: 48%;"></span></button>'
+                    '<div style="' + style + '" class="' + dropdownClass + '"><button style="' + style + '; text-align: left; padding-left: 20px;" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" ng-disabled="ctrl.disabled">{{ctrl.ngModel.$viewValue}}<span class="caret" style="position: absolute; right: 10px; top: 48%;"></span></button>'
                     + '<ul style="' + style + '" class="dropdown-menu currency-selecter-scrollable-menu">';
 
                 if (preferredLanguages.length) {
